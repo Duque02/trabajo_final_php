@@ -1,3 +1,13 @@
+<?php
+    require("./repositorio/Session.php");
+    $session = new Session();
+
+    if(isset($session->obtenerIdUsuario())) {
+        header("Location: home.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
