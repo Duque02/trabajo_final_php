@@ -2,14 +2,14 @@
     require("./repositorio/Session.php");
     $session = new Session();
 
-    if(isset($session->obtenerIdUsuario())) {
-        header("Location: home.php");
-    }
+    if(!empty($session-> obtenerIdUsuario())) {
+        header("Location: home.php"); 
+    };
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,43 +18,43 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body style="background-color: #F2F3F4;">
+<body>
     <?php
         require("header.php");
     ?>
   
     <div class="container">
         <div class="row">
-            <div class="col-6 well"> 
-    
+        <div class="col-md-3"> 
+            <img src="https://cdn-icons-png.flaticon.com/512/45/45637.png" class="img" alt="ERROR 404 NOT FOUND"
+            width="1000%">
+        </div>
+            <div class="col-md-4"> 
                 <p class="styleText">  ¡Bienvendio a star shopping! <br> Somos una empresa de licores en la que nuestro principal proposito es que tengas la mejor experiencia con nuestros productos y tengas un placentero viaje a las estrellas. </p>
-                <img src="https://discurramba.com/wp-content/uploads/2021/02/Grupo-159-min-2.png" class="img-fluid" alt="ERROR 404 NOT FOUND">
+            
             </div>
 
-            <div class="col-md-6 well "> 
-                <p> ¿Deseas iniciar sección? </p>
-
-                        <br> <br>
+            <div class="col-md-5"> 
+                <p class="subtitulo"> ¿Deseas iniciar sección? </p>
 
                     <form method="POST">
                         <label for="exampleInputEmail1" class="form-label"> Correo electronico </label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
+                        <input type="email"  placeholder="email@gmail.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
                             <br> 
                         <label for="exampleInputPassword1" class="form-label"> Contraseña </label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                        <input type="password" placeholder="*********" class="form-control" id="exampleInputPassword1" name="password">
                             <br> 
-                        <p>
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-
                         <label for="cedula"> cedula </label>
-                            <input type="text" name="cedula"> 
-                       <label for="nombre"> nombre</label>
-                       <input type="text" name="nombre">
+                        <input type="text" placeholder="1000456789" class="form-control" id="cedula" aria-describedby="cedula" name="cedula">
+                            <br>
+                       <label for="nombre"> Nombre completo </label>
+                       <input type="text" placeholder="Edward Newgate" class="form-control" id="nombre" name="nombre">
+                            
+                       <p class="check"> <input type="checkbox" class="form-check-input" id="exampleCheck1"> Soy mayor de edad </p>
                         
-                        Soy mayor de edad
-                        </p>
-                       <input type="submit" value="ACCEDER" onclick="this.form.action = 'registro.php'">
+                       <input class="boton" type="submit" value="acceder" onclick="this.form.action = 'registro.php'">
 
+                       <br> <br>
 
                     </form>   
             </div> 
@@ -65,3 +65,6 @@
     ?>
 </body>
 </html>
+
+<!-- 
+display grid /gap -->

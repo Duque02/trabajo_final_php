@@ -1,54 +1,88 @@
 
 /* Codigos de letras */
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
 .title {
-    text-shadow: 6px 6px rgb(0, 0, 0);
-    font-family: 'Rubik Distressed', cursive;
-    color: #dd8dff;
+    text-shadow: 2px 2px rgb(255, 255, 255);
+    font-family: 'Fredoka One', cursive;
+    color: rgba(34,193,195,1);
     text-align: center;
     font-size: 40px;
 
 }
 
-* {
+    *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
     header{
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(55,55,55,1) 100%);
-    border-style: solid;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+        padding-top: 2%;
+        padding-bottom: 2%;
+}
+    .img{
+        display:block;
+        margin-right:50%;
+        margin-top: 50%;
+        width: 100%;
+
 }
 
+.subtitulo{
 
-.margen{
-    padding-left: 5%;
-    padding-top: 10%;
-    color: rgb(23, 23, 23);
-    text-align: left;
+    font-family: 'Secular One', sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 150%;
+    margin-top: 5% ;
 }
+
+.check{
+    font-family: 'Secular One', sans-serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 70%;
+    margin-top: 2%;
+}
+
 
 .styleText{
-padding-top: 10%;
-padding-right: 20%;
+    margin-top: 20%;
+    margin-right: 20%;
     text-align: center;
     font-family: 'Secular One', sans-serif;
     color: rgb(0, 0, 0);
     text-align: center;
-    font-size: 90%;
+    font-size: 150%;
 }
 
+
+body{
+    background: rgb(34,193,195);
+background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+
+.boton{
+    background-color: rgb(151, 132, 168);
+    border-color: black;
+    margin-left: 40%;
+    font-size: 100%;
+}
+
+
  footer {
-        background: rgb(55,55,55); 
-        background: linear-gradient(0deg, rgba(55,55,55,1) 0%, rgba(255,255,255,1) 100%);  
+    padding-top: 2%;
+        padding-bottom: 2%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%); 
         text-align:center;
-        border-style: solid;
     }
 
 

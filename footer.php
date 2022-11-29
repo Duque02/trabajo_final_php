@@ -1,7 +1,7 @@
 <div>
 <footer class="text-center text-lg-start bg-light text-muted">
             <h1  class="title">
-            <p> te acompañamos en tu viaje a las estrellas </p>
+            <p> TE ACOMPAÑAMOS EN TU VIAJE A LAS ESTRELLAS </p>
         </h1>
     </footer>
 </div>
