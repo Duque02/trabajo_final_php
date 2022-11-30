@@ -38,22 +38,23 @@
             <div class="col-md-5">
                 <p class="subtitulo"> Crear cuenta </p>
 
-                <form method="POST">
+                <form method="POST" action="registro.php">
                     <label for="exampleInputEmail1" class="form-label"> Correo electronico </label>
-                    <input type="email" placeholder="email@gmail.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
+                    <input type="email" placeholder="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo">
                     <br>
                     <label for="exampleInputPassword1" class="form-label"> Contraseña </label>
-                    <input type="password" placeholder="*********" class="form-control" id="exampleInputPassword1" name="password">
+                    <input type="password" placeholder="Contraseña" class="form-control" id="exampleInputPassword1" name="password">
                     <br>
                     <label for="cedula"> cedula </label>
-                    <input type="text" placeholder="1000456789" class="form-control" id="cedula" aria-describedby="cedula" name="cedula">
+                    <input type="text" placeholder="Cedula" class="form-control" id="cedula" aria-describedby="cedula" name="cedula">
                     <br>
                     <label for="nombre"> Nombre completo </label>
-                    <input type="text" placeholder="Edward Newgate" class="form-control" id="nombre" name="nombre">
-
-                    <p class="check"> <input type="checkbox" class="form-check-input" id="exampleCheck1"> Soy mayor de edad </p>
-
-                    <input class="boton" type="submit" value="acceder" onclick="this.form.action = 'registro.php'">
+                    <input type="text" placeholder="Nombre" class="form-control" id="nombre" name="nombre">
+                    <br>
+                     <input type="checkbox" id="mayor" name="mayor">
+                     <label for="mayor"> Soy mayo de edad </label>
+<br> <br>
+                    <button type="submit" class="btn btn-dark"> Crear </button>
 
                     <br> <br>
 

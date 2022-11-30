@@ -25,6 +25,6 @@
     $session = new Session();
     $session->guardarIdUsuario($resultado);
 
-    header("Location: home.php");
+    header("Location: iniciarCuenta.php");
+    
     exit();
-?>

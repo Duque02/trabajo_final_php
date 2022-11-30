@@ -4,8 +4,8 @@
 
     $db = new Database();
 
-    $correo = $_POST['email'];
-    $password = $_POST['contrasena'];
+    $correo = $_POST['correo'];
+    $password = $_POST['password'];
 
     $usuario = $db->validarSession($correo, $password);
 
@@ -19,4 +19,3 @@
     $session->guardarIdUsuario($usuario['id']);
     header("Location: home.php");
     exit();
-?>
