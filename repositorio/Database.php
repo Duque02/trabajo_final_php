@@ -27,7 +27,9 @@
             }
         }
 
-        private function registrar($query, $data) {
+        // FUNCIONES PARA REALIZAR CRUD
+
+        private function insertar($query, $data) {
             $connection = $this->conectar();
             try {
                 $statement = $connection->prepare($query);
@@ -36,7 +38,7 @@
                 $statement->execute($data);
                 $connection->commit();
 
-                return $connection->lastInsertId();;
+                return $connection->lastInsertId();
             } catch (Exception $e) {
                 $connection->rollBack();
                 echo("Error: ".$e->getMessage());
@@ -44,10 +46,41 @@
             } 
         }
 
+        private function consultar($query) {
+            $connection = $this->conectar();
+            try {
+                $statement = $connection->query($query);
+                return $statement->fetchAll();
+            } catch (Exception $e) {
+                echo("Error: ".$e->getMessage());
+                die();
+            } 
+        }
+
+        private function consultarConCondicion($query, $parametrosCondicion) {
+            $connection = $this->conectar();
+            try {
+                $statement = $connection->prepare($query);
+                $statement->execute($parametrosCondicion);
+                return $statement->fetch();
+            } catch (Exception $e) {
+                echo("Error: ".$e->getMessage());
+                die();
+            } 
+        }
+
+        // FUNCIONES PARA EL MANEJO DEL USUARIO
+
         public function registrarUsuario($nombre, $correo, $password, $cedula) {
             $query = "INSERT INTO usuarios (nombre, cedula, correo, password) VALUES(?,?,?,?)";
             $data = [$nombre, $cedula, $correo, $password];
-            return $this->registrar($query, $data);
+            return $this->insertar($query, $data);
         }
+
+        public function validarSession($correo, $password) {
+            $query = "SELECT * FROM usuarios WHERE correo = ? AND password = ? ";
+            return $this->consultarConCondicion($query, [$correo , $password]);
+        }
+
     }
 ?>
