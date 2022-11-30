@@ -5,49 +5,49 @@
         private $dbname="licorera";
         private $username="root";
         private $password="";
+        private $charset="utf8";
 
-        private function conectar(){
+        public function conectar(){
             
+            $connection = "mysql: host=".$this->host."; dbname=".$this->dbname."; charset=".$this->charset;
+            
+            $option=[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION];
+
             try {
-                $connection = new mysqli(
-                    $this->host,
-                    $this->username,
-                    $this->password,
-                    $this->dbname
+                $pdo = new PDO(
+                    $connection, 
+                    $this->username, 
+                    $this->password, 
+                    $option
                 );
-
-                if ($connection->connect_error) {
-                    die("Connection failed: " . $connection->connect_error);
-                }
-
-                return $connection;
-            } catch(Exception $e) {
-                echo("Error: ".$e->getMessage());
-                die();
+                return $pdo;
+            } catch(PDOException $e){
+                return "Error: ".$e->getMessage();
+                die();//Termina la ejecución
             }
         }
 
-        private function registrar($query) {
+        private function registrar($query, $data) {
+            $connection = $this->conectar();
             try {
-                $connection = $this->conectar();
+                $statement = $connection->prepare($query);
 
-                $seCompletoLaOperacion = $connection->query($query);	
-                
-                if(!$seCompletoLaOperacion) return false;
-    
-                $idGenerado = $connection->insert_id;
-                $connection->close();
-                return $idGenerado;
+                $connection->beginTransaction();
+                $statement->execute($data);
+                $connection->commit();
+
+                return $connection->lastInsertId();;
             } catch (Exception $e) {
+                $connection->rollBack();
                 echo("Error: ".$e->getMessage());
                 die();
             } 
         }
 
         public function registrarUsuario($nombre, $correo, $password, $cedula) {
-            $query = "INSERT INTO usuarios (nombre, cedula, correo, password) VALUES('$nombre', '$cedula', '$correo', '$password')";
-            return $this->registrar($query);
+            $query = "INSERT INTO usuarios (nombre, cedula, correo, password) VALUES(?,?,?,?)";
+            $data = [$nombre, $cedula, $correo, $password];
+            return $this->registrar($query, $data);
         }
     }
-
 ?>
