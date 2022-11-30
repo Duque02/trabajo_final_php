@@ -1,10 +1,10 @@
 <?php
-    require("./repositorio/Session.php");
-    $session = new Session();
+    // require("./repositorio/Session.php");
+    // $session = new Session();
 
-    if (!empty($session->obtenerIdUsuario())) {
-        header("Location: home.php");
-    };
+    // if (!empty($session->obtenerIdUsuario())) {
+    //     header("Location: home.php");
+    // };
 
 ?>
 
@@ -31,7 +31,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/45/45637.png" class="img" alt="ERROR 404 NOT FOUND" width="1000%">
             </div>
             <div class="col-md-4">
-                <p class="styleText"> ¡Bienvendio a star shopping! <br> Somos una empresa de licores en la que nuestro principal proposito es que tengas la mejor experiencia con nuestros productos y tengas un placentero viaje a las estrellas. </p>
+                <p class="styleText"> Bienbenido a liquor store interstelar </p>
 
             </div>
 
@@ -68,6 +68,3 @@
 </body>
 
 </html>
-
-<!-- 
-display grid /gap -->

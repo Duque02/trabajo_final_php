@@ -21,28 +21,35 @@ $session = new Session();
     <?php
     require("header.php");
     ?>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2" style="background-color:white ;">
+                <div id="nav">
+                    <div class="cuerporec">
+                        <ul>
+                            <li><a href="./ron.php">RON</a></li>
+                            <br>
+                            <li><a href="./aguardiente.php">AGUARDIENTE</a></li>
+                            <br>
+                            <li><a href="./whisky.php">WHISKY</a></li>
+                            <br>
+                            <li><a href="./champaña.php">CHAMPAÑA</a></li>
+                            <br>
+                            <li><a href="./vodka.php">VODKA</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                   <p class="styleText"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat eligendi excepturi vel distinctio repudiandae, enim fuga ratione labore ipsa eos aliquam consequatur voluptate dignissimos ex animi dolore quis saepe reiciendis.
+                    <br> <br> <br> <br> <br> <br> <br>
+                   </p>
+                    
+                </div>
         </div>
-    </nav>
+    </div>
     <?php
     require("footer.php");
     ?>
